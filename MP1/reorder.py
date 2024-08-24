@@ -24,10 +24,31 @@ def pairwise_distance(Is):
     
     Given a N image stripes in Is, returns a N x N matrix dist which stores the
     distance between pairs of shreds. Specifically, dist[i,j] contains the
-    distance when strip j is just to the left of strip i. 
+    distance when strip j is just to the left of strip i.
     '''
+    
     dist = np.ones((len(Is), len(Is)))
     # write your code here
+    # calculate distance of 3 channels respectively, then sum. 
+    # print(Is[0][:, -1, c])
+    # temp1 = np.ones((3))
+    # temp2 = np.ones((3))
+    # temp1[0], temp1[1], temp1[2] = 0, 0, 255
+    # print(temp1, temp2)
+    # print(np.linalg.norm(temp2 - temp1))
+    for i in range(len(Is)):
+        for j in range(len(Is)):
+            if i != j:
+                # j is left side, i is right side
+                left = Is[j][:, -1, :]
+                right = Is[i][:, 0, :]
+                dist[i, j] = sum(np.square(left - right).flatten())
+                print(dist[i, j])
+
+            else:
+                dist[i, j] = 0
+    # print(dist)
+
     return dist
 
 
@@ -65,6 +86,7 @@ def combine(Is, order):
 def main(_):
     Is = load_imgs(FLAGS.test_name_simple)
     order = solve(Is)
+    print(order)
     I = combine(Is, order)
     
     # Show concatenated image. 

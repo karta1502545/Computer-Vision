@@ -20,7 +20,8 @@ from contour_solve import compute_edges_dxdy
 ### Note that all numbers you reported should be on val set
 FLAGS = flags.FLAGS
 flags.DEFINE_string('output_dir', 'output/demo', 'directory to save results.')
-flags.DEFINE_string('imset', 'val', 'val set to use for testing')
+# flags.DEFINE_string('imset', 'val', 'val set to use for testing')
+flags.DEFINE_string('imset', 'val_mini', 'val set to use for testing')
 
 ### Please keep N_THRESHOLDS = 19 to keep the evaluation fast and reproducible
 N_THRESHOLDS = 19

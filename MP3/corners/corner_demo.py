@@ -19,7 +19,7 @@ flags.DEFINE_enum("mode", "benchmark", ["benchmark", "vis"],
                   "Whether to visualize output on a single image, or benchmark on an image set")
 flags.DEFINE_string("imset", "val", 
                     "Image set to use for testing")
-flags.DEFINE_string("imname", "draw_cube_17", 
+flags.DEFINE_string("imname", "beckman", 
                     "Image set to use for testing")
 flags.DEFINE_float("vis_thresh", 0.1*255, 
                     "Threshold value for visualization")

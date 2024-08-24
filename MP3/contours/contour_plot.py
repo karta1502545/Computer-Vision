@@ -6,7 +6,7 @@ matplotlib.use('Agg')
 from matplotlib import pyplot as plt
 
 FLAGS = flags.FLAGS
-flags.DEFINE_list('dirs', ['output/demo'], 
+flags.DEFINE_list('dirs', ['output/demo', 'output/part1', 'output/part2', 'output/part3', 'output/part4'], 
                   'List of directories to read metrics from')
 flags.DEFINE_list('names', ['given-code'], 
                   'Legends')
